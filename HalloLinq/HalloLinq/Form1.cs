@@ -44,7 +44,7 @@ namespace HalloLinq
                               p.GebDatum.DayOfWeek == DayOfWeek.Saturday
                         orderby p.GebDatum.Month descending,
                                 p.GebDatum.Year
-                        select p;
+                        select new { DerName = p.Name.ToUpper(), Jahr = p.GebDatum.Year };
 
             dataGridView1.DataSource = query.ToList();
         }
