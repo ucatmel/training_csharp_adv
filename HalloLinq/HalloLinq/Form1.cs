@@ -36,5 +36,37 @@ namespace HalloLinq
         {
             dataGridView1.DataSource = personen;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var query = from p in personen
+                        where p.GebDatum.DayOfWeek == DayOfWeek.Sunday ||
+                              p.GebDatum.DayOfWeek == DayOfWeek.Saturday
+                        select p;
+
+            dataGridView1.DataSource = query.ToList();
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // casting + Typprüfung
+            if (e.Value is DateTime) { 
+                DateTime dttt = (DateTime)e.Value; // Hartes Casting alles in den ZielTyp
+            }
+
+            
+            // boxing /trycast)
+            DateTime? dtt = e.Value as DateTime?;
+            if (dtt !=null)
+            {
+
+            }
+
+            //pattern matching
+            if (e.Value is DateTime dt)
+            {
+                e.Value = dt.ToLongDateString();
+            }
+        }
     }
 }
