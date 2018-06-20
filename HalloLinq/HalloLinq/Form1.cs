@@ -42,6 +42,8 @@ namespace HalloLinq
             var query = from p in personen
                         where p.GebDatum.DayOfWeek == DayOfWeek.Sunday ||
                               p.GebDatum.DayOfWeek == DayOfWeek.Saturday
+                        orderby p.GebDatum.Month descending,
+                                p.GebDatum.Year
                         select p;
 
             dataGridView1.DataSource = query.ToList();
@@ -50,14 +52,15 @@ namespace HalloLinq
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // casting + Typprüfung = Alt und Doof
-            if (e.Value is DateTime) { 
+            if (e.Value is DateTime)
+            {
                 DateTime dttt = (DateTime)e.Value; // Hartes Casting alles in den ZielTyp
             }
 
-            
+
             // boxing /trycast) = Alt und Doof
             DateTime? dtt = e.Value as DateTime?;
-            if (dtt !=null)
+            if (dtt != null)
             {
 
             }
@@ -65,7 +68,8 @@ namespace HalloLinq
             //pattern matching = Neu und Cool
             if (e.Value is DateTime dt)
             {
-                e.Value = dt.ToLongDateString();
+                //e.Value = dt.ToLongDateString();
+                e.Value = dt.ToString("dddd, dd.MM.yyyy");
             }
         }
     }
