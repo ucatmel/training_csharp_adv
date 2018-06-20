@@ -85,8 +85,10 @@ namespace HalloLinq
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var result = personen.FirstOrDefault(x => x.GebDatum.Month == 5);
-            MessageBox.Show(result.Name);
+            var result = personen.FirstOrDefault(x => x.GebDatum.Month == 15);
+            //var result = personen.Single(x => x.GebDatum.Month == 5); // nur wenn es nur "ein" Ergebnis gibt funktioniert dies
+            if (result != null)
+                MessageBox.Show(result.Name);
         }
     }
 }
