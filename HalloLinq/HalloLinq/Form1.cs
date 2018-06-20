@@ -39,14 +39,24 @@ namespace HalloLinq
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // linq
             var query = from p in personen
                         where p.GebDatum.DayOfWeek == DayOfWeek.Sunday ||
                               p.GebDatum.DayOfWeek == DayOfWeek.Saturday
                         orderby p.GebDatum.Month descending,
                                 p.GebDatum.Year
-                        select new { DerName = p.Name.ToUpper(), Jahr = p.GebDatum.Year };
+                        select p;
+            //select new { DerName = p.Name.ToUpper(), Jahr = p.GebDatum.Year };
 
             dataGridView1.DataSource = query.ToList();
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = personen.Where(p => p.GebDatum.DayOfWeek == DayOfWeek.Sunday ||
+                                                           p.GebDatum.DayOfWeek == DayOfWeek.Saturday)
+                                               .OrderByDescending(x => x.GebDatum.Month)
+                                               .ThenBy(x => x.GebDatum.Year)
+                                               .ToList();
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -71,6 +81,12 @@ namespace HalloLinq
                 //e.Value = dt.ToLongDateString();
                 e.Value = dt.ToString("dddd, dd.MM.yyyy");
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var result = personen.FirstOrDefault(x => x.GebDatum.Month == 5);
+            MessageBox.Show(result.Name);
         }
     }
 }
