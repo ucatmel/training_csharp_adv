@@ -49,20 +49,20 @@ namespace HalloLinq
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            // casting + Typprüfung
+            // casting + Typprüfung = Alt und Doof
             if (e.Value is DateTime) { 
                 DateTime dttt = (DateTime)e.Value; // Hartes Casting alles in den ZielTyp
             }
 
             
-            // boxing /trycast)
+            // boxing /trycast) = Alt und Doof
             DateTime? dtt = e.Value as DateTime?;
             if (dtt !=null)
             {
 
             }
 
-            //pattern matching
+            //pattern matching = Neu und Cool
             if (e.Value is DateTime dt)
             {
                 e.Value = dt.ToLongDateString();
