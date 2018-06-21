@@ -10,8 +10,11 @@
         <Button Click="StartOhneThread" IsEnabled="False">Start ohne Threading</Button>
         <Button Click="StartTask">Start Task (Dispatcher)</Button>
         <Button Click="StartTaskTS">Start Task (Scheduler)</Button>
-        <Button Click="AbortTask">Cancel Task</Button>
         <Button Click="StartTaskAsync">Start Task (Async/Await)</Button>
+        <Button Click="StartAsyncReadDB">Count DB (Async/Await)</Button>
+        <Separator />
+        <Button Click="AbortTask">Cancel Task</Button>
+        <Separator />
         <ProgressBar Height="24" Name="pb1"/>
 
 

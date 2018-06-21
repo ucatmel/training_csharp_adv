@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -120,6 +121,28 @@ namespace HalloAsync
 
             }
             btn.IsEnabled = true;
+        }
+
+        private void StartAsyncReadDB(object sender, RoutedEventArgs e)
+        {
+            string conString = "Server=.;Database=Northwind;Trusted_Connection=true;";
+
+            var con = new SqlConnection(conString);
+            con.Open();
+
+            var cmd = con.CreateCommand();
+
+            cmd.CommandText = "Select COUNT(*) FROM Employees";
+
+
+            var result = cmd.ExecuteScalar();
+            MessageBox.Show($"Es sind {result} Employees in der DB");
+
+            con.Dispose(); //-> con.close();
+
+
+
+
         }
     }
 }
