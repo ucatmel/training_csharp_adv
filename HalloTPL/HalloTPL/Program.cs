@@ -24,6 +24,7 @@ namespace HalloTPL
              {
                  Console.WriteLine("T1 gestartet");
                  Thread.Sleep(4000);
+                 throw new InvalidOperationException();
                  Console.WriteLine("T1 fertig");
              });
 
