@@ -24,9 +24,14 @@ namespace HalloTPL
              {
                  Console.WriteLine("T1 gestartet");
                  Thread.Sleep(4000);
-                 throw new InvalidOperationException();
+                 throw new InvalidOperationException("Muuuh");
                  Console.WriteLine("T1 fertig");
              });
+
+            t1.ContinueWith(t =>
+            {
+                Console.WriteLine($"Fehler in T1: {t1.Exception.InnerExceptions.First().Message}");
+            }, CancellationToken.None, TaskContinuationOptions.OnlyOnFaulted, TaskScheduler.Default);
 
             Task<long> t2 = new Task<long>(() =>
             {
