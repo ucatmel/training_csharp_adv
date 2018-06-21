@@ -91,5 +91,35 @@ namespace HalloAsync
             }
 
         }
+
+        private async void StartTaskAsync(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.IsEnabled = false;
+            cts = new CancellationTokenSource();
+            for (int i = 0; i <= 100; i++)
+            {
+                pb1.Value = i;
+
+                try
+                {
+                    await Task.Delay(50, cts.Token);
+                }
+                catch (TaskCanceledException)
+                {
+
+                    MessageBox.Show("Task wurde erfolgreich abgebrochen");
+                }
+
+
+                if (cts.IsCancellationRequested)
+                {
+                    // cleanup
+                    break;
+                }
+
+            }
+            btn.IsEnabled = true;
+        }
     }
 }
