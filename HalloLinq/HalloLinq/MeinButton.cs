@@ -12,7 +12,7 @@ namespace HalloLinq
     public class MeinButton : Button
     {
         //[Browsable(true)]
-        public event EventHandler TrippleClick;
+        public event EventHandler<int> TrippleClick;
 
 
         int clickCount = 0;
@@ -27,7 +27,7 @@ namespace HalloLinq
                 //todo: fire  TrippleClick
                 if (TrippleClick != null)
                 {
-                    TrippleClick.Invoke(this, new EventArgs());
+                    TrippleClick.Invoke(this, clickCount);
                 }
             }
             else

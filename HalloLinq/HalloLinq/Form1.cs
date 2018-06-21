@@ -44,9 +44,9 @@ namespace HalloLinq
             meinButton1.TrippleClick += MeinButton1_TrippleClick;
         }
 
-        private void MeinButton1_TrippleClick(object sender, EventArgs e)
+        private void MeinButton1_TrippleClick(object sender, int clickCount)
         {
-            MessageBox.Show("TrippleClick");
+            MessageBox.Show($"TrippleClick:{clickCount}");
         }
 
         private void Button1_MouseMove(object sender, MouseEventArgs e)
