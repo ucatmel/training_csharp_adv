@@ -54,5 +54,34 @@ namespace HalloAsync
             }
             );
         }
+
+        private void StartTaskTS(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.IsEnabled = false;
+            TaskScheduler ts = TaskScheduler.FromCurrentSynchronizationContext();
+
+            Task.Run(() =>
+            {
+                for (int i = 0; i <= 100; i++)
+                {
+                    //pb1.Value = i + 1;
+                    Task.Factory.StartNew(() => pb1.Value = i, CancellationToken.None, TaskCreationOptions.None, ts);
+                    Thread.Sleep(50);
+                }
+                Task.Factory.StartNew(() => btn.IsEnabled = true, CancellationToken.None, TaskCreationOptions.None, ts);
+            });
+
+        }
+
+        CancellationTokenSource cts = null;
+        private void AbortTask(object sender, RoutedEventArgs e)
+        {
+            if (cts != null)
+            {
+                cts.Cancel();
+            }
+
+        }
     }
 }
