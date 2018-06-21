@@ -210,10 +210,28 @@ namespace HalloAsync
 
             //return listeMitZeug;
 
-            yield return "Fred";
-            yield return "Wilma";
-            yield return "Barney";
-            yield return "Betty";
+            //yield return "Fred";
+            //yield return "Wilma";
+            //yield return "Barney";
+            //yield return "Betty";
+
+            string conString = "Server=.;Database=Northwind;Trusted_Connection=true;";
+            using (var con = new SqlConnection(conString))
+            {
+                con.OpenAsync(cts.Token);
+
+                using (var cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "Select * FROM Employees";
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            yield return reader["FirstName"].ToString();
+                        }
+                    }
+                }
+            }
+
         }
     }
-}
