@@ -153,9 +153,11 @@ namespace HalloAsync
             pb1.IsIndeterminate = false;
         }
 
-        private void StartAlt(object sender, RoutedEventArgs e)
+        private async void StartAlt(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"Wert von alter, langsamer Methode: {GetWertvonAlterLangsamerFunktion()}");
+            //MessageBox.Show($"Wert von alter, langsamer Methode: {GetWertvonAlterLangsamerFunktion()}");
+            MessageBox.Show($"Wert von alter, langsamer Methode: { await GetWertvonAlterLangsamerFunktionAsync()}");
+
         }
 
 
@@ -163,6 +165,12 @@ namespace HalloAsync
         {
             Thread.Sleep(3000);
             return 97392 * DateTime.Now.Millisecond;
+        }
+
+
+        public Task<long> GetWertvonAlterLangsamerFunktionAsync()
+        {
+            return Task.Run(() => GetWertvonAlterLangsamerFunktion());
         }
     }
 }
