@@ -45,7 +45,7 @@ namespace HalloTPL
             t1.Start();
             t2.Start();
 
-            Task.WhenAll(t1, t2).ContinueWith(t => { Console.WriteLine($"T1 & T2 sind fertig {t2.Result}"); });
+            Task.WhenAll(t1, t2).ContinueWith(t => { Console.WriteLine($"T1 & T2 sind fertig {t2.Result}"); },TaskContinuationOptions.OnlyOnRanToCompletion);
             //Console.WriteLine(t2.Result);
 
             Console.WriteLine("Ende");
