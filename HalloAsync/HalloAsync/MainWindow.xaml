@@ -17,9 +17,10 @@
         <Separator />
         <Button Click="AbortTask">Cancel Task</Button>
         <Separator />
+        <Button Click="StartDirLaden">Directory Laden</Button>
         <ProgressBar Height="24" Name="pb1"/>
 
-
+        <ListBox Name="lb1" />
 
 
 

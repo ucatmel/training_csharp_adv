@@ -19,6 +19,7 @@ http://stud.io/s
 
 https://blogs.msdn.microsoft.com/bclteam/p/asynctargetingpackkb/  ASYNC/AWAIT für .Net4
 https://lesen.amazon.de/kp/embed?asin=B0099BJ4DU&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_S66kBbZZDQAWN  
+http://visualstudioshortcuts.com/2017/  
 
 
 Tools

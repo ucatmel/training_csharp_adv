@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -175,6 +176,19 @@ namespace HalloAsync
         public Task<long> GetWertvonAlterLangsamerFunktionAsync(CancellationToken ct)
         {
             return Task.Run(() => GetWertvonAlterLangsamerFunktion(), ct);
+        }
+
+        private void StartDirLaden(object sender, RoutedEventArgs e)
+        {
+            Task.Run(() =>
+            {
+                DirectoryInfo di = new DirectoryInfo(@"C:\Microsoft");
+                foreach (var item in di.EnumerateFiles("*.*", SearchOption.AllDirectories))
+                {
+                    Console.WriteLine(item.Name);
+                    lb1.Dispatcher.Invoke(() => lb1.Items.Add(item));
+                }
+            });
         }
     }
 }
