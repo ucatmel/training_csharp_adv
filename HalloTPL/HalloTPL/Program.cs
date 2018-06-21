@@ -27,7 +27,19 @@ namespace HalloTPL
                  Console.WriteLine("T1 fertig");
              });
 
+            Task<long> t2 = new Task<long>(() =>
+            {
+                Console.WriteLine("T2 startet Berechnung");
+                Thread.Sleep(600);
+
+                Console.WriteLine("T2 fertig");
+                return 87458189;
+
+            });
             t1.Start();
+            t2.Start();
+
+            //Console.WriteLine(t2.Result);
 
             Console.WriteLine("Ende");
             Console.ReadKey();
@@ -35,7 +47,7 @@ namespace HalloTPL
 
         private static void Zaehle()
         {
-            for (var i = 0; i <10; i++)
+            for (var i = 0; i < 10; i++)
             {
                 Console.WriteLine($"{Thread.CurrentThread.ManagedThreadId}: {i}");
             }
