@@ -155,8 +155,9 @@ namespace HalloAsync
 
         private async void StartAlt(object sender, RoutedEventArgs e)
         {
+            cts = new CancellationTokenSource();
             //MessageBox.Show($"Wert von alter, langsamer Methode: {GetWertvonAlterLangsamerFunktion()}");
-            MessageBox.Show($"Wert von alter, langsamer Methode: { await GetWertvonAlterLangsamerFunktionAsync()}");
+            MessageBox.Show($"Wert von alter, langsamer Methode: { await GetWertvonAlterLangsamerFunktionAsync(cts.Token)}");
 
         }
 
@@ -167,10 +168,13 @@ namespace HalloAsync
             return 97392 * DateTime.Now.Millisecond;
         }
 
-
         public Task<long> GetWertvonAlterLangsamerFunktionAsync()
         {
-            return Task.Run(() => GetWertvonAlterLangsamerFunktion());
+            return GetWertvonAlterLangsamerFunktionAsync(CancellationToken.None);
+        }
+        public Task<long> GetWertvonAlterLangsamerFunktionAsync(CancellationToken ct)
+        {
+            return Task.Run(() => GetWertvonAlterLangsamerFunktion(),ct);
         }
     }
 }
