@@ -61,12 +61,14 @@ namespace HalloAsync
             btn.IsEnabled = false;
             TaskScheduler ts = TaskScheduler.FromCurrentSynchronizationContext();
 
+            cts = new CancellationTokenSource();
+
             Task.Run(() =>
             {
                 for (int i = 0; i <= 100; i++)
                 {
                     //pb1.Value = i + 1;
-                    Task.Factory.StartNew(() => pb1.Value = i, CancellationToken.None, TaskCreationOptions.None, ts);
+                    Task.Factory.StartNew(() => pb1.Value = i, cts.Token, TaskCreationOptions.None, ts);
                     Thread.Sleep(50);
                 }
                 Task.Factory.StartNew(() => btn.IsEnabled = true, CancellationToken.None, TaskCreationOptions.None, ts);
