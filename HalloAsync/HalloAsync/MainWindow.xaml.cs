@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,16 @@ namespace HalloAsync
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void StartOhneThread(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                pb1.Value = i + 1;
+                
+                Thread.Sleep(50);
+            }
         }
     }
 }

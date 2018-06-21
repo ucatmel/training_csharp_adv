@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HalloAsync"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="450" Width="400">
+    <StackPanel Margin="12">
+        <Button Click="StartOhneThread">Start ohne Threading</Button>
+        <ProgressBar Height="24" Name="pb1"/>
+
+
+
+
+
+        <!--<Button Content="Start ohne Threading"></Button>
+        <Button>
+            <Button.Content>
+                <TextBlock>Start ohne Threading</TextBlock>
+            </Button.Content>
+        </Button>-->
+
+    </StackPanel>
+
 </Window>
