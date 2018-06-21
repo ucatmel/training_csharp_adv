@@ -123,22 +123,34 @@ namespace HalloAsync
             btn.IsEnabled = true;
         }
 
-        private void StartAsyncReadDB(object sender, RoutedEventArgs e)
+        private async void StartAsyncReadDB(object sender, RoutedEventArgs e)
         {
             string conString = "Server=.;Database=Northwind;Trusted_Connection=true;";
-
-            using (var con = new SqlConnection(conString))
+            cts = new CancellationTokenSource();
+            pb1.IsIndeterminate = true;
+            try
             {
-                con.Open();
-
-                using (var cmd = con.CreateCommand())
+                using (var con = new SqlConnection(conString))
                 {
-                    cmd.CommandText = "Select COUNT(*) FROM Employees; WAITFOR DELAY '00:00:05'";
+                    await con.OpenAsync(cts.Token);
 
-                    var result = cmd.ExecuteScalar();
-                    MessageBox.Show($"Es sind {result} Employees in der DB");
+                    using (var cmd = con.CreateCommand())
+                    {
+                        cmd.CommandText = "Select COUNT(*) FROM Employees; WAITFOR DELAY '00:00:05'";
+
+                        var result = await cmd.ExecuteScalarAsync(cts.Token);
+                        MessageBox.Show($"Es sind {result} Employees in der DB");
+                    }
                 }
             }
+            catch (TaskCanceledException)
+            {
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Exeception: {ex.Message}");
+            }
+            pb1.IsIndeterminate = false;
         }
     }
 }
