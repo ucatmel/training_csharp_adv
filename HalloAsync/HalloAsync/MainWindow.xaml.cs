@@ -152,5 +152,17 @@ namespace HalloAsync
             }
             pb1.IsIndeterminate = false;
         }
+
+        private void StartAlt(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"Wert von alter, langsamer Methode: {GetWertvonAlterLangsamerFunktion()}");
+        }
+
+
+        public long GetWertvonAlterLangsamerFunktion()
+        {
+            Thread.Sleep(3000);
+            return 97392 * DateTime.Now.Millisecond;
+        }
     }
 }

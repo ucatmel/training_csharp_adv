@@ -13,6 +13,8 @@
         <Button Click="StartTaskAsync">Start Task (Async/Await)</Button>
         <Button Click="StartAsyncReadDB">Count DB (Async/Await)</Button>
         <Separator />
+        <Button Click="StartAlt">Alte Langsame Funktion</Button>
+        <Separator />
         <Button Click="AbortTask">Cancel Task</Button>
         <Separator />
         <ProgressBar Height="24" Name="pb1"/>
