@@ -31,9 +31,23 @@ namespace HalloAsync
             for (int i = 0; i < 100; i++)
             {
                 pb1.Value = i + 1;
-                
+
                 Thread.Sleep(50);
             }
+        }
+
+        private void StartTask(object sender, RoutedEventArgs e)
+        {
+            Task.Run(() =>
+            {
+                for (int i = 0; i < 100; i++)
+                {
+                    pb1.Value = i + 1;
+
+                    Thread.Sleep(50);
+                }
+            }
+            );
         }
     }
 }

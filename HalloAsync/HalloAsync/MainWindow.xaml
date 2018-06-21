@@ -8,6 +8,7 @@
         Title="MainWindow" Height="450" Width="400">
     <StackPanel Margin="12">
         <Button Click="StartOhneThread">Start ohne Threading</Button>
+        <Button Click="StartTask">Start Task</Button>
         <ProgressBar Height="24" Name="pb1"/>
 
 
