@@ -23,7 +23,7 @@ namespace HalloTPL
             Task t1 = new Task(() =>
              {
                  Console.WriteLine("T1 gestartet");
-                 Thread.Sleep(400);
+                 Thread.Sleep(4000);
                  Console.WriteLine("T1 fertig");
              });
 
@@ -32,13 +32,14 @@ namespace HalloTPL
                 Console.WriteLine("T2 startet Berechnung");
                 Thread.Sleep(600);
 
-                Console.WriteLine("T2 fertig");
+                Console.WriteLine("T2 Berechnung fertig");
                 return 87458189;
 
             });
             t1.Start();
             t2.Start();
 
+            Task.WhenAll(t1, t2).ContinueWith(t => { Console.WriteLine($"T1 & T2 sind fertig {t2.Result}"); });
             //Console.WriteLine(t2.Result);
 
             Console.WriteLine("Ende");
