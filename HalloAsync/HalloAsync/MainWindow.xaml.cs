@@ -127,22 +127,18 @@ namespace HalloAsync
         {
             string conString = "Server=.;Database=Northwind;Trusted_Connection=true;";
 
-            var con = new SqlConnection(conString);
-            con.Open();
+            using (var con = new SqlConnection(conString))
+            {
+                con.Open();
 
-            var cmd = con.CreateCommand();
+                using (var cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "Select COUNT(*) FROM Employees; WAITFOR DELAY '00:00:05'";
 
-            cmd.CommandText = "Select COUNT(*) FROM Employees";
-
-
-            var result = cmd.ExecuteScalar();
-            MessageBox.Show($"Es sind {result} Employees in der DB");
-
-            con.Dispose(); //-> con.close();
-
-
-
-
+                    var result = cmd.ExecuteScalar();
+                    MessageBox.Show($"Es sind {result} Employees in der DB");
+                }
+            }
         }
     }
 }

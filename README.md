@@ -17,6 +17,8 @@ https://www.piratenpad.de/
 http://www.codemaid.net/  
 http://stud.io/s
 
+https://blogs.msdn.microsoft.com/bclteam/p/asynctargetingpackkb/  ASYNC/AWAIT für .Net4
+
 
 Tools
 ===
