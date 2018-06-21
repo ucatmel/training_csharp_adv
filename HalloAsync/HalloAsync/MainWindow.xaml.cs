@@ -70,6 +70,11 @@ namespace HalloAsync
                     //pb1.Value = i + 1;
                     Task.Factory.StartNew(() => pb1.Value = i, cts.Token, TaskCreationOptions.None, ts);
                     Thread.Sleep(50);
+                    if (cts.IsCancellationRequested)
+                    {
+                        // cleanup
+                        break;
+                    }
                 }
                 Task.Factory.StartNew(() => btn.IsEnabled = true, CancellationToken.None, TaskCreationOptions.None, ts);
             });
