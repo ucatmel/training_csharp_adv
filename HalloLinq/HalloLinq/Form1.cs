@@ -30,10 +30,28 @@ namespace HalloLinq
             int cnt = 1345;
 
             string strinInterpolation = $"Zahl {757}kg {cnt:C}";
+
+            // Event Handler registrieren
+            button1.MouseMove += Button1_MouseMove;
+            button1.Click += Button1_Click;
+            button1.Click += Button1_Click;
+            button1.Click += Button1_Click;
+            button1.Click += Button1_Click;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_MouseMove(object sender, MouseEventArgs e)
         {
+            Text = $"{e.X}x{e.Y}";
+        }
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Click Event");
+        }
+            private void button1_Click(object sender, EventArgs e)
+        {
+            // EventHandler deregistrieren
+            button1.MouseMove -= Button1_MouseMove;
+
             dataGridView1.DataSource = personen;
         }
 
