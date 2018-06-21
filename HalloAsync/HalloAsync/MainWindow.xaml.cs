@@ -28,9 +28,9 @@ namespace HalloAsync
 
         private void StartOhneThread(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i <= 100; i++)
             {
-                pb1.Value = i + 1;
+                pb1.Value = i;
 
                 Thread.Sleep(50);
             }
@@ -38,15 +38,19 @@ namespace HalloAsync
 
         private void StartTask(object sender, RoutedEventArgs e)
         {
+            Button btn = (Button)sender;
+            btn.IsEnabled = false;
+
             Task.Run(() =>
             {
-                for (int i = 0; i < 100; i++)
+                for (int i = 0; i <= 100; i++)
                 {
                     //pb1.Value = i + 1;
-                    pb1.Dispatcher.Invoke(() => pb1.Value = i + 1);
+                    pb1.Dispatcher.Invoke(() => pb1.Value = i);
 
                     Thread.Sleep(50);
                 }
+                btn.Dispatcher.Invoke(() => btn.IsEnabled = true);
             }
             );
         }

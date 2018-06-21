@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="400">
     <StackPanel Margin="12">
-        <Button Click="StartOhneThread">Start ohne Threading</Button>
-        <Button Click="StartTask">Start Task</Button>
+        <Button Click="StartOhneThread" IsEnabled="False">Start ohne Threading</Button>
+        <Button Click="StartTask">Start Task (Dispatcher)</Button>
+       
         <ProgressBar Height="24" Name="pb1"/>
 
 
