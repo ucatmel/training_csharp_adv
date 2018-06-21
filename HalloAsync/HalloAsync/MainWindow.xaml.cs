@@ -202,13 +202,18 @@ namespace HalloAsync
 
         private IEnumerable<string> GetAllEmployeesFromDB()
         {
-            var listeMitZeug = new List<string>();
-            listeMitZeug.Add("Fred");
-            listeMitZeug.Add("Wilma");
-            listeMitZeug.Add("Barney");
-            listeMitZeug.Add("Betty");
+            //var listeMitZeug = new List<string>();
+            //listeMitZeug.Add("Fred");
+            //listeMitZeug.Add("Wilma");
+            //listeMitZeug.Add("Barney");
+            //listeMitZeug.Add("Betty");
 
-            return listeMitZeug;
+            //return listeMitZeug;
+
+            yield return "Fred";
+            yield return "Wilma";
+            yield return "Barney";
+            yield return "Betty";
         }
     }
 }
