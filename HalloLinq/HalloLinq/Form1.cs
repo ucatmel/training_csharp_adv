@@ -33,21 +33,24 @@ namespace HalloLinq
 
             // Event Handler registrieren
             button1.MouseMove += Button1_MouseMove;
-            button1.Click += Button1_Click;
-            button1.Click += Button1_Click;
-            button1.Click += Button1_Click;
-            button1.Click += Button1_Click;
+            button1.Click += ButtonClickHandler;
+            button1.Click += ButtonClickHandler;
+            button1.Click += ButtonClickHandler;
+            button1.Click += ButtonClickHandler;
+
+
+            button2.Click += (s, e) => MessageBox.Show("Test");
         }
 
         private void Button1_MouseMove(object sender, MouseEventArgs e)
         {
             Text = $"{e.X}x{e.Y}";
         }
-        private void Button1_Click(object sender, EventArgs e)
+        private void ButtonClickHandler(object sender, EventArgs e)
         {
             MessageBox.Show("Click Event");
         }
-            private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             // EventHandler deregistrieren
             button1.MouseMove -= Button1_MouseMove;
