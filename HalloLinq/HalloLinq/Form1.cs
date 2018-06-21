@@ -34,12 +34,19 @@ namespace HalloLinq
             // Event Handler registrieren
             button1.MouseMove += Button1_MouseMove;
             button1.Click += ButtonClickHandler;
-            button1.Click += ButtonClickHandler;
-            button1.Click += ButtonClickHandler;
-            button1.Click += ButtonClickHandler;
+            //button1.Click += ButtonClickHandler;
+            //button1.Click += ButtonClickHandler;
+            //button1.Click += ButtonClickHandler;
 
 
             button2.Click += (s, e) => MessageBox.Show("Test");
+
+            meinButton1.TrippleClick += MeinButton1_TrippleClick;
+        }
+
+        private void MeinButton1_TrippleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("TrippleClick");
         }
 
         private void Button1_MouseMove(object sender, MouseEventArgs e)

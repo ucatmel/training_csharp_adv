@@ -10,8 +10,10 @@ http://api.football-data.org/index
 https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/  
 https://www.uservoice.com/  
 https://referencesource.microsoft.com/  
-https://github.com/ComponentFactory/Krypton  
-
+https://github.com/ComponentFactory/Krypton  für Winforms  
+https://mahapps.com/ für WPF     
+https://github.com/dennismagno/metroframework-modern-ui  
+https://www.piratenpad.de/  
 
 
 Tools
