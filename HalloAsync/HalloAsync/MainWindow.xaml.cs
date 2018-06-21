@@ -190,5 +190,25 @@ namespace HalloAsync
                 }
             });
         }
+
+        private void LadeDbYield(object sender, RoutedEventArgs e)
+        {
+            lb1.Items.Clear();
+            foreach (var item in GetAllEmployeesFromDB())
+            {
+                lb1.Items.Add(item);
+            }
+        }
+
+        private IEnumerable<string> GetAllEmployeesFromDB()
+        {
+            var listeMitZeug = new List<string>();
+            listeMitZeug.Add("Fred");
+            listeMitZeug.Add("Wilma");
+            listeMitZeug.Add("Barney");
+            listeMitZeug.Add("Betty");
+
+            return listeMitZeug;
+        }
     }
 }
