@@ -174,7 +174,7 @@ namespace HalloAsync
         }
         public Task<long> GetWertvonAlterLangsamerFunktionAsync(CancellationToken ct)
         {
-            return Task.Run(() => GetWertvonAlterLangsamerFunktion(),ct);
+            return Task.Run(() => GetWertvonAlterLangsamerFunktion(), ct);
         }
     }
 }
