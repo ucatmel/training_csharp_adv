@@ -24,6 +24,17 @@ namespace HalloReflection
                 Console.WriteLine(item.FullName);
             }
 
+
+            Type myCalcType = ass.GetType("Calculator.Calc");
+            var calc = Activator.CreateInstance(myCalcType);
+
+            MethodInfo mi = myCalcType.GetRuntimeMethod("Sum",new[] { typeof(int), typeof(int) });
+
+
+            var result= mi.Invoke(calc, new object[] { 5, 6 });
+            Console.WriteLine(result);
+
+
             Console.WriteLine("Ende");
             Console.ReadKey();
         }
