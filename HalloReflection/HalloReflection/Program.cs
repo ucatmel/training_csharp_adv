@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -36,6 +37,21 @@ namespace HalloReflection
 
             if (result is int i)
                 Console.WriteLine($"Jo ist int: {i:000}");
+
+            // -------------------------------- Wetter Service ------------------------------------------
+            Console.WriteLine("-------------------------------- Wetter Service ------------------------------------------");
+
+            
+            var wetterAss = Assembly.LoadFile(@"C:\Users\ppedv\Source\Repos\training_csharp_adv\BindFord.WetterFrosch5000\BindFord.WetterFrosch5000\bin\Debug\BindFord.WetterFrosch5000.dll");
+            // nimm die erstbeste Klasse die IWetterService Implementiert hat.
+            var wetterMitInterface = wetterAss.GetTypes().FirstOrDefault(x => x.GetInterfaces().Contains(typeof(IWetterService)));
+
+            if (wetterMitInterface != null)
+            {
+                IWetterService wetter = Activator.CreateInstance(wetterMitInterface) as IWetterService;
+                Console.WriteLine(wetter.GetWeather(DateTime.Now));
+                Console.WriteLine(wetter.GetTemperature(DateTime.Now));
+            }
 
             Console.WriteLine("Ende");
             Console.ReadKey();
