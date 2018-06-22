@@ -1,0 +1,42 @@
+﻿@model HalloWeb.Models.Stift
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Stift</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Farbe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Farbe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Staerke)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Staerke)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IstWasserfest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IstWasserfest)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
