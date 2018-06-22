@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.QualityTools.Testing.Fakes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Calculator.Tests
@@ -31,6 +32,21 @@ namespace Calculator.Tests
             var oh = new OpeningHours();
 
             Assert.AreEqual(result, oh.IsOpen(dt));
+        }
+
+
+        [TestMethod]
+        public void OpenHours_IsNowOpen()
+        {
+            var oh = new OpeningHours();
+            using (ShimsContext.Create())
+            {
+                System.Fakes.ShimDateTime.NowGet = () => new DateTime(2018, 06, 22, 11, 0, 0);
+                Assert.IsTrue(oh.IsOpenNow());
+
+                System.Fakes.ShimDateTime.NowGet = () => new DateTime(2018, 06, 22, 22, 0, 0);
+                Assert.IsFalse(oh.IsOpenNow());
+            }
         }
     }
 }

@@ -8,6 +8,11 @@ namespace Calculator
 {
     public class OpeningHours
     {
+
+        public bool IsOpenNow()
+        {
+            return IsOpen(DateTime.Now);        // Bad/Hard to Test only with Isolation Module or MS Visual Studio Enterprise Fakes
+        }
         public bool IsOpen(DateTime time)
         {
             //if (IsWeekday(time))
