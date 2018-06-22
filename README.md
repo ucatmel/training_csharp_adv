@@ -39,6 +39,8 @@ https://stackexchange.com/sites
 http://codekicker.de/
 http://www.diwebsity.com/2016/04/19/express-profiler/  
 
+https://www.tutorialspoint.com/ajax/ajax_examples.htm  
+
 Test Driven Tools
 ---
 https://www.typemock.com/isolator-product-page  
