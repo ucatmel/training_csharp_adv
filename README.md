@@ -24,15 +24,24 @@ http://visualstudioshortcuts.com/2017/
 https://ppedv.de/schulung/softwareassurance.aspx  
 https://lesen.amazon.de/kp/embed?asin=B00T0C8EUM&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_BUklBbAMSWN9S  
 
+https://blogs.msdn.microsoft.com/dotnet/  
+https://blogs.msdn.microsoft.com/vbteam/  
+https://blogs.msdn.microsoft.com/visualstudio/tag/visual-studio/  
+https://blogs.msdn.microsoft.com/visualstudio/2018/05/07/introducing-visual-studio-intellicode/  
+https://channel9.msdn.com/  
+
+Test Driven Tools
+---
 https://www.typemock.com/isolator-product-page  
 
 https://github.com/Moq/moq4  
+https://github.com/AutoFixture/AutoFixture  
 
 Tools
 ===
 ILSpy  
 Postman  
-
+IntelliCode
 
 
 Testing Frameworks  
