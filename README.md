@@ -30,6 +30,10 @@ https://blogs.msdn.microsoft.com/visualstudio/tag/visual-studio/
 https://blogs.msdn.microsoft.com/visualstudio/2018/05/07/introducing-visual-studio-intellicode/  
 https://channel9.msdn.com/  
 
+https://github.com/PrismLibrary/Prism  
+https://msdn.microsoft.com/de-de/library/system.runtime.compilerservices.callermembernameattribute(v=vs.110).aspx  
+
+
 Test Driven Tools
 ---
 https://www.typemock.com/isolator-product-page  
