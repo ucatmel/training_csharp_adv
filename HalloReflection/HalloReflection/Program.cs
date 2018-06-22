@@ -34,6 +34,8 @@ namespace HalloReflection
             var result= mi.Invoke(calc, new object[] { 5, 6 });
             Console.WriteLine(result);
 
+            if (result is int i)
+                Console.WriteLine($"Jo ist int: {i:000}");
 
             Console.WriteLine("Ende");
             Console.ReadKey();
