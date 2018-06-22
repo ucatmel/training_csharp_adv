@@ -24,6 +24,8 @@ http://visualstudioshortcuts.com/2017/
 https://ppedv.de/schulung/softwareassurance.aspx  
 https://lesen.amazon.de/kp/embed?asin=B00T0C8EUM&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_BUklBbAMSWN9S  
 
+https://www.typemock.com/isolator-product-page  
+
 Tools
 ===
 ILSpy  
