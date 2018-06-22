@@ -33,6 +33,11 @@ https://channel9.msdn.com/
 https://github.com/PrismLibrary/Prism  
 https://msdn.microsoft.com/de-de/library/system.runtime.compilerservices.callermembernameattribute(v=vs.110).aspx  
 
+https://xunit.github.io/  
+
+https://stackexchange.com/sites  
+http://codekicker.de/
+
 
 Test Driven Tools
 ---
