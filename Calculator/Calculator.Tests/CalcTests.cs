@@ -35,7 +35,7 @@ namespace Calculator.Tests
         }
 
         [TestMethod]
-        public void Calc_Sum_MAX_and_1_Result____()
+        public void Calc_Sum_MAX_and_1_Throws_OverFlowException()
         {
             //Arrange
             Calc calc = new Calc();
@@ -45,5 +45,19 @@ namespace Calculator.Tests
             Assert.ThrowsException<OverflowException>(() => calc.Sum(int.MaxValue, 1));
 
         }
+
+        [TestMethod]
+        [DataRow(2,3,5)]
+        [DataRow(-80,-5,-85)]
+        [DataRow(80,-5,75)]
+        public void Calc_Sum(int a, int b, int soll)
+        {
+            Calc calc = new Calc();
+
+            int result = calc.Sum(a, b);
+
+            Assert.AreEqual(soll, result);
+        }
+
     }
 }
