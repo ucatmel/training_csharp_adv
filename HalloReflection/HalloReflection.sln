@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloReflection", "HalloReflection\HalloReflection.csproj", "{53FD1F7B-FB7B-41C4-8D66-8051CFC299CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53FD1F7B-FB7B-41C4-8D66-8051CFC299CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53FD1F7B-FB7B-41C4-8D66-8051CFC299CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53FD1F7B-FB7B-41C4-8D66-8051CFC299CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53FD1F7B-FB7B-41C4-8D66-8051CFC299CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF2D5345-2D53-4744-89D6-9F9384250679}
+	EndGlobalSection
+EndGlobal
