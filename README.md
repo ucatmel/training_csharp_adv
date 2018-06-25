@@ -17,7 +17,7 @@ https://www.piratenpad.de/
 http://www.codemaid.net/  
 http://stud.io/s
 
-https://blogs.msdn.microsoft.com/bclteam/p/asynctargetingpackkb/  ASYNC/AWAIT für .Net4
+https://blogs.msdn.microsoft.com/bclteam/p/asynctargetingpackkb/  ASYNC/AWAIT für .Net4  
 https://lesen.amazon.de/kp/embed?asin=B0099BJ4DU&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_S66kBbZZDQAWN  
 http://visualstudioshortcuts.com/2017/  
 
@@ -36,7 +36,7 @@ https://msdn.microsoft.com/de-de/library/system.runtime.compilerservices.callerm
 https://xunit.github.io/  
 
 https://stackexchange.com/sites  
-http://codekicker.de/
+http://codekicker.de/  
 http://www.diwebsity.com/2016/04/19/express-profiler/  
 
 https://www.tutorialspoint.com/ajax/ajax_examples.htm  
